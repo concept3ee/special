@@ -1,0 +1,33 @@
+ion-content {
+    .scroll-content {
+      --ion-background-color: red;
+    }
+  }
+  .item {
+    --ion-background-color: danger;
+  }
+  .logo {
+    font-size: 25vh;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 150px;
+  }
+  h1 {
+    color: white;
+    font-size: lem;
+    margin-left: 150px;
+  }
+  
+  .rowStyle {
+    background-color: gray;
+    padding-left: 10px;
+    border-radius: 30px;
+    margin-top: 10px;
+  
+    ion-icon {
+      margin-top: 13px;
+      margin-right: 10px;
+    }
+  }
+  
+  

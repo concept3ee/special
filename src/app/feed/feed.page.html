@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color= "danger">
+    <ion-title> Your Feed </ion-title>
+
+    <ion-button slot="end">
+      <ion-button ion-button icon-only color="danger" fill="clear">
+        <ion-icon name="log-out"> </ion-icon>
+        </ion-button>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-row margin class="rowstyle">
+  <ion-button ion-button icon-only color="danger" fill="clear">
+    <ion-icon name="images"> </ion-icon>
+    </ion-button>
+    <ion-input type="text" placeholder="say something..." [(ngModel)]="text"></ion-input>
+
+    <ion-button ion-button icon-only color="danger" (click)="post()" fill="clear">
+      <ion-icon name="paper-plane"  > </ion-icon>
+      </ion-button>
+
+</ion-row>
+<ion-card *ngFor="let post of posts">
+
+    <ion-item-divider color="danger">
+      {{ post.data().owner_name }} Says
+    </ion-item-divider>
+
+    <ion-item ion-text-wrap>
+      {{ post.data().text }}
+    </ion-item>
+
+    <ion-row class="buttom-bar">
+      
+      <ion-col>
+        <ion-button ion-button icon-left fill="clear" size="small" color="danger" >
+          <ion-icon name="thumbs-up"></ion-icon>
+          <small> 18 Likes</small>
+        </ion-button>
+      </ion-col> 
+      <ion-col>
+        <ion-button ion-button iionicon-left fill="clear" size="small" color="danger">
+          <ion-icon name="logo-twitch"></ion-icon>
+          <small> 18 comments</small>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button ion-button icon-left fill="clear" size="small" color="danger">
+          <small> {{ ago(post.data().created.toDate()) }} ago</small>
+        </ion-button>
+      </ion-col>
+    
+    </ion-row>
+</ion-card>
+
+</ion-content>
